@@ -1,0 +1,56 @@
+# Archivos y directorios de compilación de LaTeX
+*.aux
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.fls
+*.fdb_latexmk
+*.snm
+*.synctex.gz
+*.nav
+*.dvi
+*.ps
+*.pdf
+*.spl
+*.run.xml
+
+# Directorios temporales
+tmp/
+
+# Archivos de LaTeX que pueden ser generados automáticamente
+*.synctex
+*.synctex(busy)
+*.synctex.gz(busy)
+*.bcf
+*.blx.bib
+
+# Archivos de biblatex
+*.bbl
+*.blg
+*.blx.bib
+
+# Archivos generados por el editor
+*.swp
+*.bak
+*.backup
+*.tmp
+*.lock
+
+# Directorios de compilación comunes
+_build/
+_output/
+auxil/
