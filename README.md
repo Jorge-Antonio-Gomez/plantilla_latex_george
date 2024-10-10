@@ -29,7 +29,10 @@ La plantilla es altamente personalizable, con funcionalidades para resaltar conc
 - **Cajas para Código (`lstlisting`)**: La plantilla incluye configuraciones para resaltar código fuente, utilizando el paquete `listings`. Por ejemplo, el siguiente fragmento de código R:
 
   ```r
-  # Ejemplo de código R
-  x <- seq(0, 10, by = 0.1)
-  y <- sin(x)
-  plot(x, y, type = 'l', col = 'blue', lwd = 2)
+  \begin{lstlisting}[style=userR]
+    # Ejemplo de código R
+    x <- seq(0, 10, by = 0.1)
+    y <- sin(x)
+    plot(x, y, type = 'l', col = 'blue', lwd = 2)
+  \end{lstlisting}
+  ```
