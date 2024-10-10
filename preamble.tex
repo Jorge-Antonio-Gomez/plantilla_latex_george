@@ -1,0 +1,493 @@
+% Archivo: preamble.tex
+
+
+% ----------------------------------------------------------------
+% --------------- PLANTILLA DE SÉPTIMO SEMESTRE ------------------
+% ----------------- MODIFICADA EL 10/10/2024 ---------------------
+% ----------------------------------------------------------------
+
+
+% -------------------------- PAQUETES ----------------------------
+
+\usepackage[a4paper, margin=3cm, top=3cm, bottom=3cm]{geometry} % modificar el tamaño de página
+\usepackage[utf8]{inputenc} % Codificación del archivo
+\usepackage[spanish]{babel} % Idioma del documento
+\usepackage{colortbl} % colorear tablas
+\spanishdecimal{.} % Cambia la coma por punto en números decimales
+\usepackage{arydshln} % hacer líneas punteadas en tablas
+\usepackage{graphicx} % insertar imágenes
+\usepackage{float} % utilizar [H]
+\usepackage{array} % personalizar tablas
+\usepackage{amsmath} % fórmulas matemáticas
+\usepackage{hyperref} % hipervínculos
+\usepackage{tcolorbox} % crear cajas personalizadas
+\tcbuselibrary{breakable} % Permite que las cajas se rompan entre páginas
+\usepackage{listings} % personalizar el estilo de los entornos de código 
+\usepackage{xcolor} % personalizar colores
+\usepackage{color} % personalizar colores
+\usepackage{multicol} % utilizar múltiples columnas
+\usepackage{fancyhdr} % personalizar la página
+\usepackage{titlesec} % personalizar los capítulos y secciones
+\usepackage{soul} % tachar texto
+\usepackage{pgfplots, pgfplotstable, pgf} % Para hacer gráficas
+\usepackage{pgfkeys} % Para hacer gráficas
+\usepackage{tikz} % Para hacer gráficas
+\usepackage{tikzscale} % Para hacer gráficas
+\usepackage{multirow} % Para hacer combinación de filas en tablas
+\usepackage{mathtools} % Para hacer operaciones matemáticas
+\usepackage{amssymb} % Para hacer símbolos matemáticos
+\usepackage{enumitem} % Para hacer listas
+\usepackage{booktabs} % Para hacer tablas
+\usepackage{adjustbox} % Para ajustar tablas
+\usepackage{tocloft} % Para personalizar la tabla de contenido
+\usepackage{lipsum} % texto de relleno
+\usepackage{setspace} % espaciado
+\usepackage{colortbl} % colorear tablas
+\usepackage{eso-pic} % poner imagen de fondo
+\usepackage{background} % poner imagen de fondo
+\usepackage{pdftexcmds} % Para compatibilidad con PDF
+\usepackage{etoolbox} % Para compatibilidad con PDF
+\usetikzlibrary{positioning, shapes, arrows.meta,
+    decorations.pathreplacing, intersections, shapes.arrows,
+    fadings}
+
+
+% ----------------------------------------------------------------
+% ----------------- MODIFICABLES DE PREÁMBULO --------------------
+% ----------------------------------------------------------------
+
+
+% -------------------------- COLORES------------------------------
+
+% Definir una macro para el nombre del color principal y secunda-
+% rio:
+\newcommand{\maincolorname}{darkgreen}
+\newcommand{\secondarycolorname}{\maincolorname}
+\newcommand{\tertiarycolorname}{\maincolorname}
+
+% Color de fondo: por defecto, el color principal
+\newcommand{\bgcolorname}{\maincolorname}
+
+% ----------------------------------------------------------------
+% ---------------- NO MODIFICABLES DE PREÁMBULO ------------------
+% ----------------------------------------------------------------
+
+
+% -------------------------- COLORES------------------------------
+
+% Definir Colores:
+    % blue agradable: % #0072B2
+    \definecolor{blue}{RGB}{0, 114, 178} 
+    % red agradable: % #D55E00
+    \definecolor{red}{RGB}{213, 94, 0} 
+    % gray agradable:  % #808080
+    \definecolor{gray}{RGB}{128, 128, 128}
+    % orange agradable: % #E69F00
+    \definecolor{orange}{RGB}{230, 159, 0}
+    % green agradable: % #00AAA6
+    \definecolor{green}{RGB}{0, 170, 166}
+    % dark green agradable: % #007642
+    \definecolor{darkgreen}{RGB}{0, 118, 66}
+    % yellow agradable: % #F0E442
+    \definecolor{yellow}{RGB}{240, 228, 66} 
+    % purple agradable: % #7100B2
+    \definecolor{purple}{RGB}{113, 0, 178}
+    % pink agradable: % #CB4EBC
+    \definecolor{pink}{RGB}{203, 78, 188}
+    % brown agradable: % #8C613C
+    \definecolor{brown}{RGB}{140, 97, 60}
+    % cyan agradable: % #44D3CB
+    \definecolor{cyan}{RGB}{68, 211, 203}
+
+
+
+% Main color: To use a defined color
+\colorlet{main}{\maincolorname}
+\colorlet{secondary}{\secondarycolorname}
+\colorlet{tertiary}{\tertiarycolorname}
+
+\colorlet{bgcolor}{\bgcolorname}
+
+
+
+% ---------------------- ESTILO DE LISTAS-------------------------
+% ------- ESTILO DE LAS ETIQUETAS, REFERENCIAS Y CAPTIONS --------
+
+% Cambiar el color de las etiquetas de referencias y ecuaciones
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=main,    % Color de enlaces internos
+    citecolor=main,    % Color de las citas
+    urlcolor=main      % Color de enlaces externos
+}
+
+% Aplicar el color a captions de figuras y tablas
+\usepackage{caption}
+\captionsetup{
+    labelfont={color=main,bf}, % Color y negritas para etiquetas
+    textfont={color=main}      % Color del texto de la leyenda
+}
+
+
+
+% ---------------------- ESTILO DE LISTAS-------------------------
+
+% Redefinir estilo de itemize y enumerate
+% Cambia el color del símbolo de 'itemize':
+\setlist[itemize]{label=\textcolor{main}{\textbullet}} 
+% Cambia el color y pone en negrita los números de 'enumerate'
+\setlist[enumerate]{label=\textcolor{main}{\bfseries\arabic*.}}
+
+
+
+% -------------- ESTILO DE LOS TÍTULOS DE SECCIÓN ----------------
+
+% section con linea abajo y color 'main':
+\titleformat{\section}
+{\normalfont\fontsize{14}{15}\bfseries\color{main}}
+{\thesection}{1em}{}[{\color{main}\titlerule[0.8pt]}]
+
+% subsection con linea abajo y color 'main':
+\titleformat{\subsection}
+{\normalfont\fontsize{12}{15}\bfseries\color{secondary}}
+{\thesubsection}{1em}{}[{\color{secondary}\titlerule[0.8pt]}]
+
+
+
+% --------------------- ESTILO DE TEXTO --------------------------
+
+% Configurando el estilo del texto:
+% Sin sangría y con espacio entre párrafos:
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.5em}
+
+
+
+% -------------------- ESTILOS DE TABLAS -------------------------
+
+% Aumentar el alto de las filas de las tablas
+\newcolumntype{P}[1]{>{\arraybackslash}p{#1}}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\ra{1.5} % Aumenta el alto de las filas de las tablas en un 30%
+
+% Color de linea de tablas:
+\arrayrulecolor{main}
+
+% Configuración de la tabla:
+\setlength{\fboxsep}{10pt} % Espacio alrededor del contenido
+\setlength{\fboxrule}{0pt} % Grosor de la línea de la caja (0pt
+% significa "sin línea")
+
+% Hacer que esto aplique en \tcolorbox:
+\tcbset{before upper={\parskip=0.5em}}
+
+
+
+
+% --------------------- ESTILO DE CAJAS --------------------------
+
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+
+% ----------------- ESTILOS DE HIPERVÍNCULOS ---------------------
+
+% Color to links and underline links:
+\hypersetup{
+    colorlinks=true,
+    linkcolor=main!60!black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    linkbordercolor=blue,
+    pdfborderstyle={/S/U/W 1},
+}
+
+
+
+% Cambiar título de "cuadro" por "Tabla":
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\tablename}{Tabla}
+
+
+
+% ------------ CONFIGURACIÓN DE CAPÍTULOS Y SECCIONES ------------
+
+% subsection de tamaño de texto:
+
+
+% ---------------------- NUEVOS COMANDOS -------------------------
+
+% Crear línea horizontal:
+\newcommand{\HRule}{\noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}} 
+
+% Crear línea horizontal gris:
+\newcommand{\HRuleGray}{\noindent\makebox[\linewidth]{\color{gray!40}\rule{\linewidth}{0.4pt}}}
+
+% Definir una macro condicional para verificar si el archivo de fondo
+% existe
+\newcommand{\setbackgroundimage}{
+  \IfFileExists{img/bg/page_background_\bgcolorname.pdf}{%
+    % Si el archivo existe, úsalo
+    \backgroundsetup{
+      scale=1,
+      color=black,
+      opacity=1,
+      angle=0,
+      position=current page.center,
+      vshift=0pt,
+      hshift=0pt,
+      contents={\includegraphics[width=\paperwidth, height=\paperheight]{img/bg/page_background_\bgcolorname.pdf}}
+    }%
+  }{%
+    % Si el archivo no existe, usar el fondo por defecto
+    \backgroundsetup{
+      scale=1,
+      color=black,
+      opacity=1,
+      angle=0,
+      position=current page.center,
+      vshift=0pt,
+      hshift=0pt,
+      contents={\includegraphics[width=\paperwidth, height=\paperheight]{img/bg/page_background_default.pdf}}
+    }%
+  }%
+}
+
+% Llamar a la macro para establecer la imagen de fondo
+\setbackgroundimage
+
+% ----------------------------------------------------------------
+
+% Personalización del entorno lstlisting:
+\lstset{
+    literate=%
+    {á}{{\'a}}1
+    {é}{{\'e}}1
+    {í}{{\'i}}1
+    {ó}{{\'o}}1
+    {ú}{{\'u}}1
+    {Á}{{\'A}}1
+    {É}{{\'E}}1
+    {Í}{{\'I}}1
+    {Ó}{{\'O}}1
+    {Ú}{{\'U}}1
+    {‘}{{'}}1
+    {’}{{'}}1
+    {─}{{-}}1
+    {─}{{-}}1
+    {—}{{-}}1
+    {–}{{-}}1
+    {▇}{{-}}1
+    {█}{{-}}1
+    {▀}{{-}}1
+    {▄}{{-}}1
+    {♥}{{-}}1
+    {∙}{{-}}1
+    {→}{{-}}1
+    {←}{{-}}1
+    {↑}{{-}}1
+    {↓}{{-}}1
+    {█}{{-}}1
+    {▐}{{-}}1
+    {▌}{{-}}1
+    {░}{{-}}1
+    {▒}{{-}}1
+    {█}{{-}}1
+    {▓}{{-}}1
+    {║}{{-}}1
+    {╗}{{-}}1
+    {╝}{{-}}1
+    {╚}{{-}}1
+    {╔}{{-}}1
+    {═}{{-}}1
+    {╠}{{-}}1
+    {╣}{{-}}1
+    {╬}{{-}}1
+    {«}{{-}}1
+    {»}{{-}}1
+    {ñ}{{\~n}}1
+    {Ñ}{{\~N}}1,
+    basicstyle=\ttfamily,
+    columns=fullflexible,
+    frame=single,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    xleftmargin=0.45cm, % Margen izquierdo
+    xrightmargin=0.35cm, % Margen derecho
+    % Tamaño de letra chico:
+    basicstyle=\fontsize{9}{11}\selectfont\ttfamily,
+    % Padding interno de la caja de 0.5cm:
+        framexleftmargin=0.3cm,
+        framexrightmargin=0.2cm,
+        framextopmargin=0.2cm,
+        framexbottommargin=0.2cm,
+    % Background color grsi claro:
+    backgroundcolor=\color{lightgray!15},
+    % Bordes redondeados
+    frameround=tttt,
+    % roundcorner=0.1cm,
+    % Redondeo de los bordes a 0.1cm:
+    % Color de la línea gris:
+    rulecolor=\color{gray!60},
+    % moredelim=[is][\color{red}\textcolor{blue}]{$}{$}, % Delimitador de colores
+}
+
+% Personalizando background color de lstinline:
+\lstset{backgroundcolor = \color{gray!5}}
+
+% lstlisting de color de código de R cómo monokai:
+\lstdefinestyle{R}{ % Estilo de código de R
+    language=R, % Lenguaje
+    basicstyle=\ttfamily\footnotesize, % Tamaño de letra y tipo de letra
+    stepnumber=1, % Número de línea
+    commentstyle=\color{green}, % Color de los comentarios
+    keywordstyle=\bfseries\color{blue}, % Color de las palabras clave
+    stringstyle=\color{orange}, % Color de las strings
+    showstringspaces=false, % No mostrar espacios en las strings
+    columns=fullflexible,
+    frame=single,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    % xleftmargin=1.2cm, % Margen izquierdo
+    % xrightmargin=0.5cm, % Margen derecho
+    % Tamaño de letra chico:
+    basicstyle=\fontsize{9}{11}\selectfont\ttfamily,
+    % Padding interno de la caja de 0.5cm:
+        framexleftmargin=0.3cm,
+        framexrightmargin=0.2cm,
+        framextopmargin=0.2cm,
+        framexbottommargin=0.2cm,
+    % Background color grsi claro:
+    backgroundcolor=\color{lightgray!15},
+    % Bordes redondeados a 0.1cm:
+    frameround=tttt,
+    % Color de la línea gris:
+    rulecolor=\color{gray!60},
+    % Números de línea de color gris:
+    numberstyle=\color{gray},
+    % Números de línea en tamaño chico:
+    numbersep=5pt,
+    % Números de línea con padding de 0.5cm:
+    numbersep=0.5cm,
+}
+
+\lstdefinestyle{userR}{ % Estilo de código de R
+    language=R, % Lenguaje
+    basicstyle=\ttfamily\footnotesize, % Tamaño de letra y tipo de letra
+    stepnumber=1, % Número de línea
+    commentstyle=\color{green}, % Color de los comentarios
+    keywordstyle=\bfseries\color{blue}, % Color de las palabras clave
+    stringstyle=\color{orange}, % Color de las strings
+    showstringspaces=false, % No mostrar espacios en las strings
+    columns=fullflexible,
+    frame=single,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    % xleftmargin=1.2cm, % Margen izquierdo
+    % xrightmargin=0.5cm, % Margen derecho
+    % Tamaño de letra chico:
+    basicstyle=\fontsize{9}{11}\selectfont\ttfamily,
+    % Padding interno de la caja de 0.5cm:
+        framexleftmargin=0.3cm,
+        framexrightmargin=0.2cm,
+        framextopmargin=0.2cm,
+        framexbottommargin=0.2cm,
+    % Background color grsi claro:
+    backgroundcolor=\color{green!10},
+    % Bordes redondeados a 0.1cm:
+    frameround=tttt,
+    % Color de la línea gris:
+    rulecolor=\color{gray!60},
+    % Números de línea de color gris:
+    numberstyle=\color{gray},
+    % Números de línea en tamaño chico:
+    numbersep=5pt,
+    % Números de línea con padding de 0.5cm:
+    numbersep=0.5cm,
+}
+
+\lstdefinestyle{output}{
+    language=bash,
+    stepnumber=1, % Número de línea
+    commentstyle=\color{green}, % Color de los comentarios
+    keywordstyle=\bfseries\color{blue}, % Color de las palabras clave
+    stringstyle=\color{orange}, % Color de las strings
+    showstringspaces=false, % No mostrar espacios en las strings
+    columns=fullflexible,
+    keepspaces=true,
+    frame=single,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    basicstyle=\fontsize{9}{11}\color{black!60}\selectfont\ttfamily,
+        framexleftmargin=0.3cm,
+        framexrightmargin=0.2cm,
+        framextopmargin=0.2cm,
+        framexbottommargin=0.2cm,
+    backgroundcolor=\color{black!10},
+    frameround=tttt,
+    rulecolor=\color{gray!60},
+    numberstyle=\color{gray},
+    % numbersep=0.5cm,
+}
+
+
+% ---------------- PERSONALIZACIÓN DE LA PÁGINA ------------------
+
+% Personalización de la página:
+\pagestyle{fancy}
+\rhead{\small{\asignatura}} % Nombre de la asignatura en mayúsculas
+\lhead{\small{\leftmark}} % Nombre de la sección en minúsculas
+% \rfoot{\small{Página \thepage}} % Número de página en el pie de página
+\rfoot{\textbf{\color{main}\footnotesize{Página \thepage}}} % Número de página en el pie de página
+% Cambio de color del número de página de la primera página:
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \cfoot{\textbf{\color{main}\footnotesize{\thepage}}} % Número de página en el pie de página
+    \renewcommand{\headrulewidth}{0pt} % Quitar línea de la parte superior
+    \renewcommand{\footrulewidth}{0pt} % Quitar línea de la parte inferior
+    }
+    \cfoot{} % Quitar número default de página:
+    
+    
+
+% ------------------ ENCABEZADO DE DOCUMENTO ---------------------
+
+\newcommand*{\FrontPage}[2]{%
+    % Título, autor y fecha
+    \maketitle
+
+    % Espaciado entre párrafos
+    \setstretch{1} % Espaciado
+
+    % Incluir resumen si el primer argumento es 1
+    \ifnum#1=1
+        % Cambiar nombre del resumen a 'main' Resumen:
+        \renewcommand{\abstractname}{\color{main}Resumen}
+        \begin{abstract}
+            #2
+        \end{abstract}
+    \fi
+
+    \HRuleGray
+
+    % Tabla de contenido:
+    \begin{tcolorbox}[colback=main!5!white, colframe=main!75!black, title=\textbf{Tabla de Contenido}, toptitle=1.5mm, bottomtitle=1.5mm, breakable]
+        % Quitar el título de la tabla de contenido, incluyendo el espacio que ocupa:
+        \renewcommand{\contentsname}{}
+        % Quitar el espacio entre el título y la tabla de contenido:
+        \setlength{\cftbeforetoctitleskip}{-1cm}
+        % Quitar el espacio entre el último ítem del índice y la línea:
+        \setlength{\cftaftertoctitleskip}{1cm}
+        % Esto requiere el paquete tocloft
+        \tableofcontents
+    \end{tcolorbox}
+}
+
+
+% ------------------- TÍTULO, AUTOR Y FECHA ----------------------
+
+\title{\textbf{\Large{\textbf{\asignatura}}}}
+\setstretch{0.8} % Espaciado reducido para el autor
+\author{\textbf{\LARGE{\color{main}\titulo}}\\\autor}
+\date{\today}

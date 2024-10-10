@@ -1,0 +1,46 @@
+\documentclass[10pt]{article} % Clase del documento
+
+    \input{preamble.tex} % Paquetes y configuraciones
+
+    % ----------------------------------------------------------------
+    % ------------------------ MODIFICABLES --------------------------
+    % ----------------------------------------------------------------
+
+
+    % Título del documento:
+        \newcommand{\titulo}[1][]{Título del Documento}
+    % Asignatura:
+        \newcommand{\asignatura}[1][]{Asignatura III}
+    % Autor:
+        % Opción 1: Nombre e institución
+        \newcommand{\autor}[1][]{Jorge Antonio Gómez García\\Centro de Investigación y Docencia Económicas}
+        % Opción 2: Nombre y matrícula
+        % \newcommand{\autor}[1][]{Jorge Antonio Gómez García\\Matrícula: 2111005}
+
+
+    % ----------------------------------------------------------------
+    % -------------------------- DOCUMENTO ---------------------------
+    % ----------------------------------------------------------------
+
+
+\begin{document}
+
+% --------------------------- FRONTAL ----------------------------
+
+    % 0 si no se quiere mostrar el resumen,
+    % 1 si se quiere mostrar
+    \FrontPage{1}{Este es el resumen... \lipsum[1]}
+    % \HRuleGray
+    \newpage
+
+% --------------------------- INICIO -----------------------------
+
+
+
+% ----------------------------------------------------------------
+
+% -------------------------- Ejemplos ----------------------------
+
+\input{examples.tex}
+
+\end{document}
