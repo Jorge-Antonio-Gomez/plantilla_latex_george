@@ -78,3 +78,6 @@ La plantilla es altamente personalizable, con funcionalidades para resaltar conc
     plot(x, y, type = 'l', col = 'blue', lwd = 2)
   \end{lstlisting}
   ```
+# Front Page
+
+Puede modificar la parte inicial del documento en  `\FrontPage`. Más documentación sobre el comando a continuación: [Documentación de `\FronPage`](/FrontPage.md)
