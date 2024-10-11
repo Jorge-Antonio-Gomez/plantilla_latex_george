@@ -78,6 +78,9 @@ La plantilla es altamente personalizable, con funcionalidades para resaltar conc
     plot(x, y, type = 'l', col = 'blue', lwd = 2)
   \end{lstlisting}
   ```
+- **Fórmula para cancelar símbolos**: El comando `\CancelTo` sirve para cancelar partes de ecuaciones de modo que se puedan colorear. Su sintaxis de uso es la siguiente: `\CancelTo[<color>]{<resultado>}{<expresión>}`.
+  El comando toma tres argumentos: el primero (opcional) para definir el color del tachado, el segundo para especificar el resultado que aparecerá encima de la flecha que indica hacia dónde "cancelar", y el tercero es el símbolo o fórmula que se desea tachar. Un ejemplo es `\CancelTo[\color{red}]{0}{x} + 5 = 5`, el cuál cancela a cero la `x`.
+
 # Front Page
 
 Puede modificar la parte inicial del documento en  `\FrontPage`. Más documentación sobre el comando a continuación: [Documentación de `\FronPage`](/FrontPage.md)
