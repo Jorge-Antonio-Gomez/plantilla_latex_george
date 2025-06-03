@@ -54,3 +54,6 @@ tmp/
 _build/
 _output/
 auxil/
+
+# Backup local
+backup_local/
