@@ -2,7 +2,7 @@
 
 ## Descripción del Repositorio
 
-El repositorio `plantilla_latex_george` contiene una plantilla en LaTeX diseñada para la creación y presentación de documentos académicos del Centro de Investigación y Docencia Económicas (CIDE). Esta plantilla está especialmente pensada para estudiantes y académicos que deseen mejorar la calidad y el aspecto visual de sus entregas académicas, proporcionando una organización clara de secciones, el uso de colores estéticos y elementos visuales como cajas resaltadas que mejoran la presentación del contenido. Proporciona una estructura bien definida que facilita la organización del contenido, como la inclusión de secciones para problemas, ejemplos, notas y definiciones. Además, incluye personalizaciones que mejoran la estética del documento, como el uso de cajas resaltadas y líneas divisorias.
+El repositorio `plantilla_latex_george` contiene una plantilla en LaTeX diseñada para la creación y presentación de documentos académicos. Esta plantilla está especialmente pensada para estudiantes y académicos que deseen mejorar la calidad y el aspecto visual de sus entregas académicas, proporcionando una organización clara de secciones, el uso de colores estéticos y elementos visuales como cajas resaltadas que mejoran la presentación del contenido. Proporciona una estructura bien definida que facilita la organización del contenido, como la inclusión de secciones para problemas, ejemplos, notas y definiciones. Además, incluye personalizaciones que mejoran la estética del documento, como el uso de cajas resaltadas y líneas divisorias.
 
 La plantilla es altamente personalizable, con funcionalidades para resaltar conceptos importantes, incluir ejemplos y notas, presentando la información de manera clara y profesional. Es ideal para cursos de matemáticas, economía y otras disciplinas donde sea necesario un enfoque riguroso y estéticamente agradable.
 
@@ -147,27 +147,27 @@ La plantilla permite configurar fácilmente los elementos principales del docume
 
 Puede modificar la parte inicial del documento con `\FrontPage`. Más documentación sobre el comando a continuación: [Documentación de `\FrontPage`](/FrontPage.md)
 
-## 🚀 Herramienta de Automatización: LaTeX-Here PowerShell
+## Herramienta de automatización: LaTeX-Here PowerShell
 
-Para facilitar el uso de esta plantilla, se ha desarrollado una herramienta de PowerShell que permite crear nuevos proyectos LaTeX de manera instantánea desde cualquier ubicación en Windows.
+Esta plantilla incluye una herramienta de PowerShell que automatiza la creación de nuevos proyectos LaTeX desde cualquier ubicación en Windows.
 
-### ¿Qué es LaTeX-Here PowerShell?
+### Qué es LaTeX-Here PowerShell
 
-**LaTeX-Here PowerShell** es un comando personalizado que automatiza la creación de nuevos proyectos LaTeX utilizando esta plantilla. Con un simple comando, crea una nueva carpeta con todos los archivos necesarios para comenzar inmediatamente.
+LaTeX-Here PowerShell es un comando que automatiza la creación de nuevos proyectos LaTeX utilizando esta plantilla. Crea una nueva carpeta con todos los archivos necesarios para comenzar inmediatamente.
 
-### 🎯 Características Principales
+### Características principales
 
-- **🌐 Clonado inteligente**: Descarga automáticamente la versión más actualizada desde GitHub
-- **📱 Modo offline**: Funciona sin internet usando una plantilla local de respaldo
-- **🎯 Renombrado automático**: Renombra `main.tex` con el nombre de tu proyecto
-- **🧹 Limpieza automática**: Gestión inteligente de archivos temporales
-- **💬 Comandos bilingües**: Disponible en inglés (`latex-here`) y español (`plantilla`)
+- **Clonado inteligente**: descarga automáticamente la versión más actualizada desde GitHub
+- **Modo offline**: funciona sin internet usando una plantilla local de respaldo
+- **Renombrado automático**: renombra `main.tex` con el nombre de tu proyecto
+- **Limpieza automática**: gestión de archivos temporales
+- **Comandos bilingües**: disponible en inglés (`latex-here`) y español (`plantilla`)
 
-### 📦 Instalación y Uso
+### Instalación y uso
 
 La herramienta está disponible en su propio repositorio: **[LaTeX-Here PowerShell](https://github.com/Jorge-Antonio-Gomez/latex-here-powershell)**
 
-#### Instalación Rápida
+#### Instalación
 
 ```powershell
 # 1. Clona el repositorio de la herramienta
@@ -178,7 +178,7 @@ cd latex-here-powershell
 .\install.ps1
 ```
 
-#### Ejemplos de Uso
+#### Ejemplos de uso
 
 ```powershell
 # Crear plantilla con nombre por defecto
@@ -191,17 +191,17 @@ latex-here "Mi Tesis Doctoral"
 plantilla "Proyecto Final de Economía"
 ```
 
-### 📁 Estructura Creada
+### Estructura creada
 
-Después de ejecutar el comando, obtienes:
+Después de ejecutar el comando:
 
 ```
 Mi Proyecto LaTeX/
-├── img/                          # 📁 Carpeta para imágenes y fondos
+├── img/                          # Carpeta para imágenes y fondos
 │   └── bg/                       # Fondos predefinidos
-├── Mi Proyecto LaTeX.tex         # 📄 Archivo principal (renombrado automáticamente)
-├── preamble.tex                  # ⚙️ Configuración y paquetes LaTeX
-└── examples.tex                  # 📝 Ejemplos y plantillas de contenido
+├── Mi Proyecto LaTeX.tex         # Archivo principal (renombrado automáticamente)
+├── preamble.tex                  # Configuración y paquetes LaTeX
+└── examples.tex                  # Ejemplos y plantillas de contenido
 ```
 
 ### 💡 Flujo de Trabajo Recomendado
@@ -233,7 +233,6 @@ Para documentación completa, ejemplos detallados y casos de uso específicos, v
 ## Últimas Actualizaciones
 
 **Versión modificada el 03/08/2025:**
-- Actualización para documentos del CIDE
 - Mejoras en el formato de tablas y figuras
 - Nuevos comandos matemáticos predefinidos
 - Personalización avanzada de notas al pie
