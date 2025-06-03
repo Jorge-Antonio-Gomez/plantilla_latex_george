@@ -147,6 +147,89 @@ La plantilla permite configurar fácilmente los elementos principales del docume
 
 Puede modificar la parte inicial del documento con `\FrontPage`. Más documentación sobre el comando a continuación: [Documentación de `\FrontPage`](/FrontPage.md)
 
+## 🚀 Herramienta de Automatización: LaTeX-Here PowerShell
+
+Para facilitar el uso de esta plantilla, se ha desarrollado una herramienta de PowerShell que permite crear nuevos proyectos LaTeX de manera instantánea desde cualquier ubicación en Windows.
+
+### ¿Qué es LaTeX-Here PowerShell?
+
+**LaTeX-Here PowerShell** es un comando personalizado que automatiza la creación de nuevos proyectos LaTeX utilizando esta plantilla. Con un simple comando, crea una nueva carpeta con todos los archivos necesarios para comenzar inmediatamente.
+
+### 🎯 Características Principales
+
+- **🌐 Clonado inteligente**: Descarga automáticamente la versión más actualizada desde GitHub
+- **📱 Modo offline**: Funciona sin internet usando una plantilla local de respaldo
+- **🎯 Renombrado automático**: Renombra `main.tex` con el nombre de tu proyecto
+- **🧹 Limpieza automática**: Gestión inteligente de archivos temporales
+- **💬 Comandos bilingües**: Disponible en inglés (`latex-here`) y español (`plantilla`)
+
+### 📦 Instalación y Uso
+
+La herramienta está disponible en su propio repositorio: **[LaTeX-Here PowerShell](https://github.com/Jorge-Antonio-Gomez/latex-here-powershell)**
+
+#### Instalación Rápida
+
+```powershell
+# 1. Clona el repositorio de la herramienta
+git clone https://github.com/Jorge-Antonio-Gomez/latex-here-powershell.git
+cd latex-here-powershell
+
+# 2. Ejecuta el instalador automático
+.\install.ps1
+```
+
+#### Ejemplos de Uso
+
+```powershell
+# Crear plantilla con nombre por defecto
+latex-here
+
+# Crear con nombre personalizado
+latex-here "Mi Tesis Doctoral"
+
+# Usando el alias en español
+plantilla "Proyecto Final de Economía"
+```
+
+### 📁 Estructura Creada
+
+Después de ejecutar el comando, obtienes:
+
+```
+Mi Proyecto LaTeX/
+├── img/                          # 📁 Carpeta para imágenes y fondos
+│   └── bg/                       # Fondos predefinidos
+├── Mi Proyecto LaTeX.tex         # 📄 Archivo principal (renombrado automáticamente)
+├── preamble.tex                  # ⚙️ Configuración y paquetes LaTeX
+└── examples.tex                  # 📝 Ejemplos y plantillas de contenido
+```
+
+### 💡 Flujo de Trabajo Recomendado
+
+```powershell
+# 1. Navegar al directorio de trabajo
+cd "C:\Proyectos\Universidad\2025"
+
+# 2. Crear nueva plantilla
+latex-here "Análisis Económico - Semestre I"
+
+# 3. Navegar a la nueva carpeta
+cd "Análisis Económico - Semestre I"
+
+# 4. Abrir en tu editor LaTeX favorito
+code .                           # Para VS Code
+# o
+texstudio "Análisis Económico - Semestre I.tex"  # Para TeXstudio
+```
+
+### 🔗 Más Información
+
+Para documentación completa, ejemplos detallados y casos de uso específicos, visita:
+- **Repositorio**: [latex-here-powershell](https://github.com/Jorge-Antonio-Gomez/latex-here-powershell)
+- **Ejemplos detallados**: [EXAMPLES.md](https://github.com/Jorge-Antonio-Gomez/latex-here-powershell/blob/main/EXAMPLES.md)
+
+---
+
 ## Últimas Actualizaciones
 
 **Versión modificada el 03/08/2025:**
