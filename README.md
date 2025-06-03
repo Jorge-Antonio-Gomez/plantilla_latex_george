@@ -2,7 +2,7 @@
 
 ## Descripción del Repositorio
 
-El repositorio `plantilla_latex_george` contiene una plantilla en LaTeX diseñada para la creación y presentación de tareas académicas. Esta plantilla está especialmente pensada para estudiantes que deseen mejorar la calidad y el aspecto visual de sus entregas académicas, proporcionando una organización clara de secciones, el uso de colores estéticos y elementos visuales como cajas resaltadas que mejoran la presentación del contenido. Proporciona una estructura bien definida que facilita la organización del contenido, como la inclusión de secciones para problemas, ejemplos, notas y definiciones. Además, incluye personalizaciones que mejoran la estética del documento, como el uso de cajas resaltadas y líneas divisorias.
+El repositorio `plantilla_latex_george` contiene una plantilla en LaTeX diseñada para la creación y presentación de documentos académicos del Centro de Investigación y Docencia Económicas (CIDE). Esta plantilla está especialmente pensada para estudiantes y académicos que deseen mejorar la calidad y el aspecto visual de sus entregas académicas, proporcionando una organización clara de secciones, el uso de colores estéticos y elementos visuales como cajas resaltadas que mejoran la presentación del contenido. Proporciona una estructura bien definida que facilita la organización del contenido, como la inclusión de secciones para problemas, ejemplos, notas y definiciones. Además, incluye personalizaciones que mejoran la estética del documento, como el uso de cajas resaltadas y líneas divisorias.
 
 La plantilla es altamente personalizable, con funcionalidades para resaltar conceptos importantes, incluir ejemplos y notas, presentando la información de manera clara y profesional. Es ideal para cursos de matemáticas, economía y otras disciplinas donde sea necesario un enfoque riguroso y estéticamente agradable.
 
@@ -29,6 +29,30 @@ La plantilla es altamente personalizable, con funcionalidades para resaltar conc
 
   \end{tcolorbox}
   ```
+
+- **Interlineado Configurable**: La plantilla incluye configuración personalizable del interlineado del documento. Por defecto está configurado con `\singlespacing`, pero se puede cambiar fácilmente a `\onehalfspacing` o `\doublespacing`. Además, permite configurar el interlineado específico en cualquier parte del documento usando `\setstretch{valor}`.
+
+- **Notas al Pie Personalizadas**: Las notas al pie están completamente personalizadas con:
+  - Colores personalizados para los símbolos y texto de las notas al pie
+  - Numeración arábiga en lugar de símbolos
+  - Interlineado específico para las notas (`\footnotelayout`)
+  - Separación y márgenes configurables
+
+- **Mejoras en Tablas y Figuras**: 
+  - **Tablas**: Se ha añadido soporte para `threeparttable`, `tabularx`, `tablefootnote` y `adjustbox` para crear tablas más profesionales. Las tablas ahora se llaman "Tabla" en lugar de "Cuadro".
+  - **Figuras**: Soporte mejorado para subfiguras con `subcaption` y figuras flotantes con `wrapfig`.
+  - **Leyendas**: Tamaño de fuente personalizable para todas las leyendas.
+
+- **Definiciones Matemáticas**: Se incluyen comandos predefinidos para conjuntos matemáticos comunes:
+  - `\R` para números reales
+  - `\N` para números naturales  
+  - `\Z` para números enteros
+  - `\Q` para números racionales
+  - `\C` para números complejos
+  - `\E` para esperanza matemática
+  - `\qed` para símbolo de fin de demostración
+
+- **Tags de Ecuaciones Coloreados**: Las etiquetas de ecuaciones (`\tag{}`) automáticamente usan el color principal del documento.
 
 - **Colores Personalizables**: Los colores principales (`main`, `secondary`, `tertiary`) son fáciles de modificar según las preferencias del usuario. La plantilla incluye una paleta de colores agradables ya definidos, como `blue`, `red`, `green`, entre otros.
 
@@ -78,9 +102,58 @@ La plantilla es altamente personalizable, con funcionalidades para resaltar conc
     plot(x, y, type = 'l', col = 'blue', lwd = 2)
   \end{lstlisting}
   ```
+
 - **Fórmula para cancelar símbolos**: El comando `\CancelTo` sirve para cancelar partes de ecuaciones de modo que se puedan colorear. Su sintaxis de uso es la siguiente: `\CancelTo[<color>]{<resultado>}{<expresión>}`.
   El comando toma tres argumentos: el primero (opcional) para definir el color del tachado, el segundo para especificar el resultado que aparecerá encima de la flecha que indica hacia dónde "cancelar", y el tercero es el símbolo o fórmula que se desea tachar. Un ejemplo es `\CancelTo[\color{red}]{0}{x} + 5 = 5`, el cuál cancela a cero la `x`.
 
-# Front Page
+## Configuración del Documento
 
-Puede modificar la parte inicial del documento en  `\FrontPage`. Más documentación sobre el comando a continuación: [Documentación de `\FronPage`](/FrontPage.md)
+### Personalización del Encabezado
+
+La plantilla permite configurar fácilmente los elementos principales del documento:
+
+```latex
+% Configuración en main.tex
+\newcommand{\asignatura}{Nombre de la Asignatura}
+\newcommand{\titulo}{Título del Documento}
+\newcommand{\autor}[1][]{Nombre del Autor\\Centro de Investigación y Docencia Económicas}
+
+% Configuración opcional de fecha
+% \date{} % Vacío usa la fecha actual
+% \date{Fecha personalizada}
+```
+
+### Control del Interlineado
+
+```latex
+% En cualquier parte del documento:
+\setstretch{1.2} % Configura interlineado específico
+
+% O usando comandos predefinidos en el preámbulo:
+\singlespacing    % Interlineado simple (por defecto)
+\onehalfspacing   % Interlineado de 1.5
+\doublespacing    % Interlineado doble
+```
+
+### Configuración de la Página Frontal
+
+```latex
+% Mostrar resumen (1) o no mostrarlo (0)
+\FrontPage{1}{Texto del resumen aquí...}
+% \FrontPage{0}{} % Sin resumen
+```
+
+# Documentación de la Página Frontal
+
+Puede modificar la parte inicial del documento con `\FrontPage`. Más documentación sobre el comando a continuación: [Documentación de `\FrontPage`](/FrontPage.md)
+
+## Últimas Actualizaciones
+
+**Versión modificada el 03/08/2025:**
+- Actualización para documentos del CIDE
+- Mejoras en el formato de tablas y figuras
+- Nuevos comandos matemáticos predefinidos
+- Personalización avanzada de notas al pie
+- Control mejorado del interlineado
+- Formato renovado del encabezado del documento
+- Tags de ecuaciones con color automático
