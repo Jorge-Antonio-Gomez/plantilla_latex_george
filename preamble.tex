@@ -2,8 +2,8 @@
 
 
 % ----------------------------------------------------------------
-% --------------- PLANTILLA DE SÉPTIMO SEMESTRE ------------------
-% ----------------- MODIFICADA EL 10/10/2024 ---------------------
+% -------------------- PLANTILLA DEL CIDE ------------------------
+% ----------------- MODIFICADA EL 03/08/2025 ---------------------
 % ----------------------------------------------------------------
 
 
@@ -12,23 +12,30 @@
 \usepackage[a4paper, margin=3cm, top=3cm, bottom=3cm]{geometry} % modificar el tamaño de página
 \usepackage[utf8]{inputenc} % Codificación del archivo
 \usepackage[spanish]{babel} % Idioma del documento
+\usepackage{caption} % Personalizar leyendas
 \usepackage{colortbl} % colorear tablas
+\usepackage{threeparttable} % Asegúrate de incluir este paquete
+\usepackage{subcaption} % Personalizar subfiguras
 \spanishdecimal{.} % Cambia la coma por punto en números decimales
 \usepackage{arydshln} % hacer líneas punteadas en tablas
 \usepackage{graphicx} % insertar imágenes
 \usepackage{float} % utilizar [H]
 \usepackage{array} % personalizar tablas
+\usepackage{url} % incluir enlaces
+\usepackage{tablefootnote} % notas al pie en tablas
 \usepackage{amsmath} % fórmulas matemáticas
 \usepackage{hyperref} % hipervínculos
+\usepackage{tabularx} % personalizar tablas
 \usepackage{tcolorbox} % crear cajas personalizadas
 \tcbuselibrary{breakable} % Permite que las cajas se rompan entre páginas
+\usetikzlibrary{babel} % Para compatibilidad de TikZ con babel
 \usepackage{listings} % personalizar el estilo de los entornos de código 
 \usepackage{xcolor} % personalizar colores
 \usepackage{color} % personalizar colores
 \usepackage{multicol} % utilizar múltiples columnas
 \usepackage{fancyhdr} % personalizar la página
 \usepackage{titlesec} % personalizar los capítulos y secciones
-\usepackage{soul} % tachar texto
+\usepackage{soul} % Paquete para tachar texto
 \usepackage{pgfplots, pgfplotstable, pgf} % Para hacer gráficas
 \usepackage{pgfkeys} % Para hacer gráficas
 \usepackage{tikz} % Para hacer gráficas
@@ -37,31 +44,37 @@
 \usepackage{mathtools} % Para hacer operaciones matemáticas
 \usepackage{amssymb} % Para hacer símbolos matemáticos
 \usepackage{enumitem} % Para hacer listas
+\usepackage{adjustbox} % Para ajustar tablas
 \usepackage{booktabs} % Para hacer tablas
 \usepackage{adjustbox} % Para ajustar tablas
 \usepackage{tocloft} % Para personalizar la tabla de contenido
 \usepackage{lipsum} % texto de relleno
 \usepackage{setspace} % espaciado
 \usepackage{colortbl} % colorear tablas
+\usepackage[symbol]{footmisc} % Cambiar el símbolo de las notas al pie
 \usepackage{eso-pic} % poner imagen de fondo
 \usepackage{background} % poner imagen de fondo
 \usepackage{pdftexcmds} % Para compatibilidad con PDF
 \usepackage{etoolbox} % Para compatibilidad con PDF
+\usepackage{tabularx} % Para hacer tablas
+\usepackage{cancel} % Para tachar texto en ecuaciones
+\usepackage{etoolbox} % Para compatibilidad con PDF
+\usepackage{wrapfig} % Para poner figuras al lado del texto
 \usetikzlibrary{positioning, shapes, arrows.meta,
     decorations.pathreplacing, intersections, shapes.arrows,
     fadings}
+\tcbuselibrary{listingsutf8, skins} % Permite el uso de verbatim % Configuración de tcolorbox para incluir TikZ
 
 
 % ----------------------------------------------------------------
 % ----------------- MODIFICABLES DE PREÁMBULO --------------------
 % ----------------------------------------------------------------
 
-
 % -------------------------- COLORES------------------------------
 
 % Definir una macro para el nombre del color principal y secunda-
 % rio:
-\newcommand{\maincolorname}{darkgreen}
+\newcommand{\maincolorname}{blue}
 \newcommand{\secondarycolorname}{\maincolorname}
 \newcommand{\tertiarycolorname}{\maincolorname}
 
@@ -129,6 +142,21 @@
     textfont={color=main}      % Color del texto de la leyenda
 }
 
+% Renombrar tablas e índice de tablas
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\tablename}{Tabla}
+\captionsetup[table]{name=Tabla}
+
+
+
+% ---------------------- ESTILO DE LISTAS-------------------------
+
+% Interlineado del documento
+    \singlespacing
+    % \onehalfspacing
+    % \doublespacing
+
+
 
 
 % ---------------------- ESTILO DE LISTAS-------------------------
@@ -138,6 +166,49 @@
 \setlist[itemize]{label=\textcolor{main}{\textbullet}} 
 % Cambia el color y pone en negrita los números de 'enumerate'
 \setlist[enumerate]{label=\textcolor{main}{\bfseries\arabic*.}}
+
+
+
+% -------------------- ESTILO DE CAPTIONS ------------------------
+
+% Cambiar tamaño de caption
+\captionsetup{font=small}
+
+
+
+% -------------------- ESTILO DE FOOTNOTE ------------------------
+
+% COLOR
+
+\makeatletter
+% Cambiar el color del símbolo de la footnote
+\renewcommand{\@makefnmark}{\textcolor{main}{\textsuperscript{\@thefnmark}}}
+% Cambiar el color del texto de la footnote
+\renewcommand{\@makefntext}[1]{\noindent\textcolor{main}{\textsuperscript{\@thefnmark}} #1}
+\makeatother
+
+% ESTILO
+
+\setlength{\footnotesep}{1em} % Separación vertical entre las notas al pie y el texto principal
+\setlength{\skip\footins}{1em} % Separación entre la línea y las notas al pie
+\renewcommand{\footnotemargin}{1em} % Margen colgante para simular viñetas
+
+% Configuración del interlineado específico para las notas al pie
+\renewcommand{\footnotelayout}{\setstretch{1.2}} % Cambia "1.2" por el valor que desees
+
+% Números en lugar de símbolos
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+% ----------------------- CANCELAR COLOR--------------------------
+
+\let\cancelorigcolor\CancelColor% Just for conveniency...
+
+\newcommand{\CancelTo}[3][]{%
+  \ifblank{#1}{}{%
+    \renewcommand{\CancelColor}{#1}%
+  }
+  \cancelto{#2}{#3}% 
+}
 
 
 
@@ -152,6 +223,14 @@
 \titleformat{\subsection}
 {\normalfont\fontsize{12}{15}\bfseries\color{secondary}}
 {\thesubsection}{1em}{}[{\color{secondary}\titlerule[0.8pt]}]
+
+
+
+% ------------- CAMBIAR COLOR TAGS DE ECUACIONES -----------------
+
+% Redefinir \tag para que utilice el color main automáticamente
+\let\oldtag\tag
+\renewcommand{\tag}[1]{\oldtag{\textcolor{main}{#1}}}
 
 
 
@@ -202,13 +281,6 @@
     linkbordercolor=blue,
     pdfborderstyle={/S/U/W 1},
 }
-
-
-
-% Cambiar título de "cuadro" por "Tabla":
-\renewcommand{\listtablename}{Índice de tablas}
-\renewcommand{\tablename}{Tabla}
-
 
 
 % ------------ CONFIGURACIÓN DE CAPÍTULOS Y SECCIONES ------------
@@ -464,12 +536,17 @@
     \ifnum#1=1
         % Cambiar nombre del resumen a 'main' Resumen:
         \renewcommand{\abstractname}{\color{main}Resumen}
+        \vspace{-2.5em}
+        % \textcolor{main}{\rule{\textwidth}{0.4mm}}
         \begin{abstract}
             #2
         \end{abstract}
+        \begin{center}
+            \textcolor{main}{\rule{\textwidth}{0.4mm}}
+        \end{center}
     \fi
 
-    \HRuleGray
+    % \HRuleGray
 
     % Tabla de contenido:
     \begin{tcolorbox}[colback=main!5!white, colframe=main!75!black, title=\textbf{Tabla de Contenido}, toptitle=1.5mm, bottomtitle=1.5mm, breakable]
@@ -485,9 +562,49 @@
 }
 
 
+
+
+% ------------------------ DEFINICIONES --------------------------
+
+\newcommand{\qed}{\par\noindent\hfill\ensuremath{\blacksquare}} % Define QED symbol that always appears on next line
+\usetikzlibrary{decorations.markings} % Added for arrow markings
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}} % Definir el conjunto de los enteros
+\newcommand{\Q}{\mathbb{Q}} % Definir el conjunto de los racionales
+\newcommand{\C}{\mathbb{C}} % Definir el conjunto de los complejos
+\newcommand{\F}{\mathbb{F}} % Definir el conjunto de los números finitos
+\newcommand{\T}{\mathbb{T}} % Definir el conjunto de los números reales
+\newcommand{\E}{\mathbb{E}} % Esperado
+\newcommand{\supA}{\sup(A)}
+\newcommand{\infA}{\inf(A)}
+\newcommand{\eps}{\varepsilon}
+
+
+
 % ------------------- TÍTULO, AUTOR Y FECHA ----------------------
 
-\title{\textbf{\Large{\textbf{\asignatura}}}}
-\setstretch{0.8} % Espaciado reducido para el autor
-\author{\textbf{\LARGE{\color{main}\titulo}}\\\autor}
+% Asignatura
+\title{\begin{minipage}{\textwidth}
+    \setstretch{0.8} % Espaciado
+    \begin{center}
+        \textbf{\Large{\textbf{\asignatura}}}
+        % \HRuleGray
+    \end{center}
+\end{minipage}}
+
+% Título del documento + autor
+\author{\hspace*{-0.5em}\begin{minipage}{\textwidth}
+\begin{center}
+    % Título del documento + autor
+    \setstretch{1.5} % Espaciado normal para el título
+    % \textcolor{main}{\rule{1cm}{0.4mm}}\vspace{1em}\\
+    \textbf{\LARGE{\color{main}\titulo}}\vspace{0.5em}\\\vspace{0.3em}
+    \setstretch{1} % Espaciado normal para el título
+    \autor
+\end{center}
+\end{minipage}}
+
+% Fecha
 \date{\today}
+% \date{\today\\\vspace{1em}\textcolor{main}{\rule{1cm}{0.4mm}}}
