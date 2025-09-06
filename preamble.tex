@@ -157,9 +157,8 @@
     % \onehalfspacing
     % \doublespacing
 
-
-
-
+    
+    
 % ---------------------- ESTILO DE LISTAS-------------------------
 
 % Redefinir estilo de itemize y enumerate
@@ -174,6 +173,18 @@
 
 % Cambiar tamaño de caption
 \captionsetup{font=small}
+
+
+
+% -------------------- ESTILO DE COLUMNAS ------------------------
+
+%  Establecer espacio de separación entre columnas
+\setlength{\columnsep}{1cm}
+
+% Línea entre columnas, por defecto no se muestra (=0)
+% Se recomienda 0.4pt para que sea igual que la \HRuleGray
+    \setlength{\columnseprule}{0.0pt}
+    \renewcommand{\columnseprulecolor}{\color{gray!40}} % Color de la línea
 
 
 
@@ -229,9 +240,14 @@
 
 % ------------- CAMBIAR COLOR TAGS DE ECUACIONES -----------------
 
-% Redefinir \tag para que utilice el color main automáticamente
+% Redefinir \tag no explícito para que utilice el color main automáticamente
 \let\oldtag\tag
 \renewcommand{\tag}[1]{\oldtag{\textcolor{main}{#1}}}
+
+% --- Código para cambiar el color del \tag{} explícito---
+\makeatletter
+\renewcommand{\tagform@}[1]{\maketag@@@{\textcolor{main}{(#1)}}}
+\makeatother
 
 
 

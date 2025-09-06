@@ -52,7 +52,12 @@ La plantilla es altamente personalizable, con funcionalidades para resaltar conc
   - `\E` para esperanza matemática
   - `\qed` para símbolo de fin de demostración
 
-- **Tags de Ecuaciones Coloreados**: Las etiquetas de ecuaciones (`\tag{}`) automáticamente usan el color principal del documento.
+- **Tags de Ecuaciones Coloreados**: Las etiquetas de ecuaciones (`\tag{}`) automáticamente usan el color principal del documento. Tanto los tags explícitos como los implícitos ahora utilizan el color `main` automáticamente.
+
+- **Configuración de Columnas**: Nueva funcionalidad para trabajar con documentos de múltiples columnas:
+  - Espacio de separación entre columnas personalizable (`\columnsep`)
+  - Línea divisoria opcional entre columnas con color configurable
+  - Control del grosor de la línea separadora (`\columnseprule`)
 
 - **Colores Personalizables**: Los colores principales (`main`, `secondary`, `tertiary`) son fáciles de modificar según las preferencias del usuario. La plantilla incluye una paleta de colores agradables ya definidos, como `blue`, `red`, `green`, entre otros.
 
@@ -143,6 +148,31 @@ La plantilla permite configurar fácilmente los elementos principales del docume
 % \FrontPage{0}{} % Sin resumen
 ```
 
+### Configuración de Columnas
+
+```latex
+% Espacio de separación entre columnas
+\setlength{\columnsep}{1cm}
+
+% Línea entre columnas (0pt = sin línea)
+\setlength{\columnseprule}{0.4pt}  % Grosor de la línea
+\renewcommand{\columnseprulecolor}{\color{gray!40}}  % Color de la línea
+```
+
+### Tags de Ecuaciones Personalizados
+
+```latex
+% Los tags ahora automáticamente usan el color principal
+\begin{equation}
+    E = mc^2 \tag{Einstein}
+\end{equation}
+
+% O sin tag explícito, el número también será coloreado
+\begin{equation}
+    \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+\end{equation}
+```
+
 # Documentación de la Página Frontal
 
 Puede modificar la parte inicial del documento con `\FrontPage`. Más documentación sobre el comando a continuación: [Documentación de `\FrontPage`](/FrontPage.md)
@@ -231,6 +261,12 @@ Para documentación completa, ejemplos detallados y casos de uso específicos, v
 ---
 
 ## Últimas Actualizaciones
+
+**Versión modificada el 05/09/2025:**
+- **Nueva configuración de columnas**: Soporte completo para documentos multicolumna con espaciado y líneas divisorias personalizables
+- **Mejoras en tags de ecuaciones**: Tanto los tags explícitos (`\tag{}`) como los automáticos ahora usan consistentemente el color principal
+- **Optimización del preámbulo**: Limpieza y reorganización del código para mejor mantenimiento
+- **Control de espaciado mejorado**: Mejor gestión de espacios en blanco en el preámbulo
 
 **Versión modificada el 03/08/2025:**
 - Mejoras en el formato de tablas y figuras
